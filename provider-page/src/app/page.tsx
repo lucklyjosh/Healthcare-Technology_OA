@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Third Section */}
-      <section className="min-h-screen bg-gradient-to-b from-white to-gray-100 flex flex-col md:flex-row">
+      <section className="min-h-screen bg-gradient-to-b from-white to-gray-100 flex flex-col">
         {/* Number Column for Mobile */}
         <div className="md:hidden w-full h-[80px] bg-white flex justify-center items-center border-b-2 border-gray-200 shadow-md">
           <h1 className="text-[64px] font-light text-gray-800">1</h1>
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 grid grid-cols-12 gap-8 p-8 md:p-16">
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-12 gap-8 p-8 md:p-16">
 
           {/* Title Section with Full Width */}
           <div className="col-span-12">
@@ -117,12 +117,12 @@ export default function Home() {
           </div>
 
           {/* Left Section - Text */}
-          <div className="lg:col-span-7">
-            <h3 className="text-[32px] md:text-[48px] lg:text-[64px] font-normal leading-[100%] tracking-[0%] text-gray-900 font-light mt-8"
+          <div className="col-span-12 md:col-span-7">
+            <h3 className="text-[28px] md:text-[48px] lg:text-[64px] font-normal leading-[100%] text-gray-900 font-light mt-4 md:mt-8"
               style={{ fontFamily: 'Optima, sans-serif' }}>
               Measure with Precision
             </h3>
-            <p className="text-gray-600 text-[20px] md:text-[28px] lg:text-[36px] font-extralight leading-[120%] md:leading-[100%] tracking-[0%] align-middle mt-8"
+            <p className="text-gray-600 text-[18px] md:text-[28px] lg:text-[36px] font-extralight leading-[140%] md:leading-[120%] mt-4 md:mt-8"
               style={{ fontFamily: 'Manrope, sans-serif' }}>
               Generation Lab partners with Tempus and Illumina to ensure gold-standard accuracy in our
               SystemAge Test, leveraging Illumina&apos;s sequencing and Tempus&apos; CLIA-certified lab for precise aging insights.
@@ -130,27 +130,32 @@ export default function Home() {
           </div>
 
           {/* Right Section - Logos */}
-          <div className="lg:col-span-5 flex flex-col justify-center gap-8 mt-8 lg:mt-0">
-            <Image
-              src="/tempus.png"
-              alt="Tempus Logo"
-              width={200}
-              height={80}
-              className="h-[60px] md:h-[80px] w-auto"
-            />
-            <Image
-              src="/illumina.png"
-              alt="Illumina Logo"
-              width={200}
-              height={80}
-              className="h-[60px] md:h-[80px] w-auto"
-            />
+          <div className="col-span-12 md:col-span-5 flex flex-col justify-center gap-4 md:gap-8 mt-6 md:mt-0">
+            {/* Responsive image display */}
+            <div className="w-full flex justify-center md:justify-start">
+              <Image
+                src="/tempus.png"
+                alt="Tempus Logo"
+                width={200}
+                height={80}
+                className="h-[40px] md:h-[60px] lg:h-[80px] w-auto"
+              />
+            </div>
+            <div className="w-full flex justify-center md:justify-start">
+              <Image
+                src="/illumina.png"
+                alt="Illumina Logo"
+                width={200}
+                height={80}
+                className="h-[40px] md:h-[60px] lg:h-[80px] w-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Fourth Section */}
-      <section className="min-h-screen bg-gradient-to-b from-white to-gray-100 text-gray-900 flex">
+      <section className="min-h-screen bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col">
 
         {/* Number Column for Mobile */}
         <div className="md:hidden w-full h-[80px] bg-white flex justify-center items-center border-b-2 border-gray-200 shadow-md">
@@ -222,16 +227,18 @@ export default function Home() {
               />
             </div>
 
-            {/* Research Papers
+            {/* Research Papers - Horizontal Scroll */}
             <p className="italic font-semibold mb-4">Read our papers:</p>
-            <div className="flex space-x-4 overflow-x-auto pb-4">
+            <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
               <Image src="/paper1.png" alt="Research Paper 1" width={96} height={128} className="w-24 h-32 object-cover" />
               <Image src="/paper2.png" alt="Research Paper 2" width={96} height={128} className="w-24 h-32 object-cover" />
               <Image src="/paper3.png" alt="Research Paper 3" width={96} height={128} className="w-24 h-32 object-cover" />
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
+
+
     </main>
   );
 }
