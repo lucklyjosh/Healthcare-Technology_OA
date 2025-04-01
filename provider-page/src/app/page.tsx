@@ -1,32 +1,34 @@
 import Image from 'next/image';
+import DoctorCard from "@/components/DoctorCard";
+import Script from 'next/script';
 
-interface DoctorCardProps {
-  name: string;
-  imageSrc: string;
-  clinic: string;
-}
+// interface DoctorCardProps {
+//   name: string;
+//   imageSrc: string;
+//   clinic: string;
+// }
 
-function DoctorCard({ name, imageSrc, clinic }: DoctorCardProps) {
-  return (
-    <div className="min-w-[350px] p-8 border border-[#D4AF37] rounded-2xl text-center snap-center">
-      <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#D4AF37] snap-center">
-        <Image
-          src={imageSrc}
-          alt={name}
-          width={160}
-          height={160}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <h3 className="text-2xl font-semibold text-[#D4AF37]">{name}</h3>
-      <p className="text-gray-400 mb-4">{clinic}</p>
-      <p className="text-gray-500">
-        &quot;Lobortis leo pretium facilisis amet nisl at nec. Scelerisque
-        risus tortor donec ipsum consequat semper consequat adipiscing ultrices.&quot;
-      </p>
-    </div>
-  );
-}
+// function DoctorCard({ name, imageSrc, clinic }: DoctorCardProps) {
+//   return (
+//     <div className="min-w-[350px] p-8 border border-[#D4AF37] rounded-2xl text-center snap-center">
+//       <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#D4AF37] snap-center">
+//         <Image
+//           src={imageSrc}
+//           alt={name}
+//           width={160}
+//           height={160}
+//           className="w-full h-full object-cover"
+//         />
+//       </div>
+//       <h3 className="text-2xl font-semibold text-[#D4AF37]">{name}</h3>
+//       <p className="text-gray-400 mb-4">{clinic}</p>
+//       <p className="text-gray-500">
+//         &quot;Lobortis leo pretium facilisis amet nisl at nec. Scelerisque
+//         risus tortor donec ipsum consequat semper consequat adipiscing ultrices.&quot;
+//       </p>
+//     </div>
+//   );
+// }
 
 export default function Home() {
   return (
@@ -73,87 +75,54 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Display Desktop screen*/}
+        {/* Desktop */}
         <div className="hidden md:block">
-          <div className="overflow-x-auto pb-8 scrollbar-hide scroll-snap-type-x snap-x snap-mandatory scroll-smooth">
+          <div className="overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory doctor-scroll-x">
             <div className="flex justify-center space-x-8 px-8 md:px-24">
-              <div className="snap-center">
+              <DoctorCard
+                name="Dr. James Pattinson, MD"
+                imageSrc="/Dr_James.png"
+                clinic="Explore Longevity Clinic, Los Angeles"
+              />
+              <DoctorCard
+                name="Dr. Clayton Anderson, MD"
+                imageSrc="/Dr_Clayton.png"
+                clinic="Peek Longevity Clinic, New York"
+              />
+              <DoctorCard
+                name="Dr. Kate Ma, MD"
+                imageSrc="/Dr_Kate.png"
+                clinic="Peek Longevity Clinic, New York"
+              />
+
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile */}
+        <div className="md:hidden relative">
+          <div className="overflow-x-auto pb-8 scrollbar-hide scroll-snap-type-x snap-x snap-mandatory scroll-smooth pl-6">
+            <div className="flex gap-6 w-max">
+              <div className="snap-start flex-shrink-0 w-[85vw]">
                 <DoctorCard
                   name="Dr. James Pattinson, MD"
                   imageSrc="/Dr_James.png"
                   clinic="Explore Longevity Clinic, Los Angeles"
                 />
               </div>
-              <div className="snap-center">
+              <div className="snap-start flex-shrink-0 w-[85vw]">
                 <DoctorCard
                   name="Dr. Clayton Anderson, MD"
                   imageSrc="/Dr_Clayton.png"
                   clinic="Peek Longevity Clinic, New York"
                 />
               </div>
-              <div className="snap-center">
+              <div className="snap-start flex-shrink-0 w-[85vw] pr-6">
                 <DoctorCard
                   name="Dr. Kate Ma, MD"
                   imageSrc="/Dr_Kate.png"
                   clinic="Peek Longevity Clinic, New York"
                 />
-              </div>
-              
-              
-              
-            </div>
-          </div>
-        </div>
-
-        {/* Display Mobile screen*/}
-        <div className="md:hidden">
-          <div className="relative">
-            <div className="overflow-x-auto pb-8 scrollbar-hide scroll-snap-type-x snap-x snap-mandatory scroll-smooth pl-6">
-              <div className="flex gap-6 w-max">
-                <div className="snap-start flex-shrink-0 w-[85vw]">
-                  <DoctorCard
-                    name="Dr. James Pattinson, MD"
-                    imageSrc="/Dr_James.png"
-                    clinic="Explore Longevity Clinic, Los Angeles"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-[85vw]">
-                  <DoctorCard
-                    name="Dr. Clayton Anderson, MD"
-                    imageSrc="/Dr_Clayton.png"
-                    clinic="Peek Longevity Clinic, New York"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-[85vw] pr-6">
-                  <DoctorCard
-                    name="Dr. Kate Ma, MD"
-                    imageSrc="/Dr_Kate.png"
-                    clinic="Peek Longevity Clinic, New York"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-[85vw]">
-                  <DoctorCard
-                    name="Dr. James Pattinson, MD"
-                    imageSrc="/Dr_James.png"
-                    clinic="Explore Longevity Clinic, Los Angeles"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-[85vw]">
-                  <DoctorCard
-                    name="Dr. Clayton Anderson, MD"
-                    imageSrc="/Dr_Clayton.png"
-                    clinic="Peek Longevity Clinic, New York"
-                  />
-                </div>
-                <div className="snap-start flex-shrink-0 w-[85vw] pr-6">
-                  <DoctorCard
-                    name="Dr. Kate Ma, MD"
-                    imageSrc="/Dr_Kate.png"
-                    clinic="Peek Longevity Clinic, New York"
-                  />
-                </div>
-                
-                
               </div>
             </div>
           </div>
@@ -161,8 +130,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Third Section */}
       <div className="background-gradient">
-        {/* Third Section */}
+
         <section className="min-h-screen text-gray-900 flex flex-col md:flex-row">
           {/* Number Column for Mobile */}
           <div className="md:hidden w-full h-[80px] bg-white flex justify-center items-center border-b-2 border-gray-200 shadow-md"
@@ -270,20 +240,42 @@ export default function Home() {
 
               <div className="lg:col-span-5">
                 <div className="mb-8">
-                  <p className="italic font-semibold mb-4">An Example of Aging Entropy Curve for Cardiac System</p>
+                  <p className="italic font-semibold mb-4">
+                    An Example of Aging Entropy Curve for Cardiac System
+                  </p>
                   <div className="relative aspect-video w-full rounded-lg overflow-hidden">
-                    <Image src="/section_04_01.png" alt="Aging Curve" fill className="object-cover" />
+                    <Image
+                      src="/section_04_01.png"
+                      alt="Aging Curve"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
+
                 <p className="italic font-semibold mb-4">Read our papers:</p>
-                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                  {["section_04_02.png", "section_04_03.png", "section_04_04.png"].map((img, i) => (
-                    <div key={i} className="flex-shrink-0 w-24 h-32 relative">
-                      <Image src={`/${img}`} alt={`Research Paper ${i + 1}`} fill className="object-cover" />
-                    </div>
-                  ))}
+
+                <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth -ml-2 pl-2">
+                  <div className="flex gap-4 w-max">
+                    {["section_04_02.png", "section_04_03.png", "section_04_04.png", "section_04_02.png", "section_04_03.png", "section_04_04.png"].map(
+                      (img, i) => (
+                        <div
+                          key={i}
+                          className="flex-shrink-0 snap-start w-24 h-32 relative rounded-md overflow-hidden"
+                        >
+                          <Image
+                            src={`/${img}`}
+                            alt={`Research Paper ${i + 1}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
+
             </div>
 
             {/* Section 5 Content */}
@@ -488,7 +480,11 @@ export default function Home() {
 
 
       </div >
-
+      <Script src="../components/scroll-wheel-horizontal.js" strategy="afterInteractive" />
     </main >
   );
 }
+
+
+
+
