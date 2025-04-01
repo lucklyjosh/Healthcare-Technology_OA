@@ -8,6 +8,7 @@ export default function Home() {
 
       {/* First Section */}
       <section className="section-one min-h-screen md:h-full grid grid-rows-2 gap-8 md:gap-0">
+
         {/* Top Section */}
         <div className="flex flex-col justify-center items-start px-4 sm:px-8 md:px-24 pt-20 md:pt-0 md:translate-y-24 lg:translate-y-32">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[96px] leading-[100%] font-extralight">
@@ -47,7 +48,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Desktop */}
+        {/* Card display on Desktop */}
         <div className="hidden md:block">
           <div className="overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory doctor-scroll-x">
             <div className="flex space-x-8 px-8 md:px-24">
@@ -85,7 +86,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile */}
+        {/* Card display on Mobile */}
         <div className="md:hidden relative">
           <div className="overflow-x-auto pb-8 scrollbar-hide scroll-snap-type-x snap-x snap-mandatory scroll-smooth pl-6">
             <div className="flex gap-6 w-max">
@@ -462,13 +463,8 @@ export default function Home() {
 
               </div>
             </div >
-
-
-
           </div >
         </section >
-
-
       </div >
       <Script src="../components/scroll-wheel-horizontal.js" strategy="afterInteractive" />
     </main >
