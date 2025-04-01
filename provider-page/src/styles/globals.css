@@ -18,6 +18,68 @@
   }
 }
 
+/* Section one setup */
+.section-one {
+  position: relative;
+  background: 
+    linear-gradient(180deg, rgba(19, 19, 18, 0.8) 36.33%, rgba(255, 244, 209, 0.8) 155.56%),
+    url('/section_01_01.png') left center / 50% auto no-repeat,
+    url('/section_01_02.png') right top / 80% auto no-repeat; 
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+  .section-one {
+    background: 
+      linear-gradient(180deg, rgba(19, 19, 18, 0.8) 36.33%, rgba(255, 244, 209, 0.8) 155.56%),
+      url('/section_01_01.png') left center / 60% auto no-repeat,
+      url('/section_01_02.png') right top / 100% auto no-repeat;
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+  .section-one {
+    background: 
+      linear-gradient(180deg, rgba(19, 19, 18, 0.9) 36.33%, rgba(255, 244, 209, 0.9) 155.56%),
+      url('/section_01_01.png') left center / 80% auto no-repeat,
+      url('/section_01_02.png') right top / 120% auto no-repeat;
+  }
+}
+
+
+/* Add blur effect */
+.section-one::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* 調整透明度，讓圖片更清晰 */
+  backdrop-filter: blur(10px); /* 加強模糊效果 */
+  z-index: 0;
+}
+
+/* Ensure content is above blur effect */
+.section-one h1,
+.section-one p,
+.section-one button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: Enhance text contrast for readability */
+.section-one h1 {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* 增強文字對比 */
+}
+
+.section-one p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
 /* Apply Fonts and Colors */
 body {
   background: var(--background);
@@ -27,8 +89,9 @@ body {
 
 @font-face {
   font-family: 'Optima';
-  src: local('Optima'), sans-serif;
+  src: local('Optima');
 }
+
 
 
 /* Hidden scrollbar */
@@ -37,6 +100,16 @@ body {
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;   
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.background-gradient {
+  background: linear-gradient(
+    to bottom,
+    #FFFFFF 0%,    
+    #DDD7CF 63%,   
+    #32200B 100%   
+  );
 }
