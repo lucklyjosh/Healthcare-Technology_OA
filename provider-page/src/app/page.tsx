@@ -2,34 +2,6 @@ import Image from 'next/image';
 import DoctorCard from "@/components/DoctorCard";
 import Script from 'next/script';
 
-// interface DoctorCardProps {
-//   name: string;
-//   imageSrc: string;
-//   clinic: string;
-// }
-
-// function DoctorCard({ name, imageSrc, clinic }: DoctorCardProps) {
-//   return (
-//     <div className="min-w-[350px] p-8 border border-[#D4AF37] rounded-2xl text-center snap-center">
-//       <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#D4AF37] snap-center">
-//         <Image
-//           src={imageSrc}
-//           alt={name}
-//           width={160}
-//           height={160}
-//           className="w-full h-full object-cover"
-//         />
-//       </div>
-//       <h3 className="text-2xl font-semibold text-[#D4AF37]">{name}</h3>
-//       <p className="text-gray-400 mb-4">{clinic}</p>
-//       <p className="text-gray-500">
-//         &quot;Lobortis leo pretium facilisis amet nisl at nec. Scelerisque
-//         risus tortor donec ipsum consequat semper consequat adipiscing ultrices.&quot;
-//       </p>
-//     </div>
-//   );
-// }
-
 export default function Home() {
   return (
     <main className="h-screen bg-gradient-to-b from-[#000000] to-[#1a1a1a] text-white">
@@ -78,7 +50,7 @@ export default function Home() {
         {/* Desktop */}
         <div className="hidden md:block">
           <div className="overflow-x-auto pb-8 scrollbar-hide scroll-smooth snap-x snap-mandatory doctor-scroll-x">
-            <div className="flex justify-center space-x-8 px-8 md:px-24">
+            <div className="flex space-x-8 px-8 md:px-24">
               <DoctorCard
                 name="Dr. James Pattinson, MD"
                 imageSrc="/Dr_James.png"
@@ -94,7 +66,21 @@ export default function Home() {
                 imageSrc="/Dr_Kate.png"
                 clinic="Peek Longevity Clinic, New York"
               />
-
+              <DoctorCard
+                name="Dr. James Pattinson, MD"
+                imageSrc="/Dr_James.png"
+                clinic="Explore Longevity Clinic, Los Angeles"
+              />
+              <DoctorCard
+                name="Dr. Clayton Anderson, MD"
+                imageSrc="/Dr_Clayton.png"
+                clinic="Peek Longevity Clinic, New York"
+              />
+              <DoctorCard
+                name="Dr. Kate Ma, MD"
+                imageSrc="/Dr_Kate.png"
+                clinic="Peek Longevity Clinic, New York"
+              />
             </div>
           </div>
         </div>
@@ -160,11 +146,11 @@ export default function Home() {
             </div>
 
             <div className="col-span-12 md:col-span-7">
-              <h3 className="text-[28px] md:text-[48px] lg:text-[64px] font-normal leading-[100%] text-gray-900 font-light mt-4 md:mt-8"
+              <h3 className="text-[40px] md:text-[48px] lg:text-[56px] font-normal leading-[100%] text-gray-900 font-light mt-4 md:mt-8"
                 style={{ fontFamily: 'Optima, sans-serif' }}>
                 Measure with Precision
               </h3>
-              <p className="text-gray-600 text-[18px] md:text-[28px] lg:text-[36px] font-extralight leading-[140%] md:leading-[120%] mt-4 md:mt-8"
+              <p className="text-gray-600 text-[20px] md:text-[40px] lg:text-[48px] font-extralight leading-[140%] md:leading-[120%] mt-4 md:mt-8"
                 style={{ fontFamily: 'Manrope, sans-serif' }}>
                 Generation Lab partners with Tempus and Illumina to ensure gold-standard accuracy in our
                 SystemAge Test, leveraging Illumina&apos;s sequencing and Tempus&apos; CLIA-certified lab for precise aging insights.
@@ -216,20 +202,24 @@ export default function Home() {
             {/* Section 4 Content */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-16">
               <div className="lg:col-span-12 mb-8">
-                <h2 className="text-[32px] md:text-[48px] lg:text-[64px] font-semibold leading-[1.2] text-[#170D00]">
+                <h3
+                  className="text-[48px] md:text-[56px] lg:text-[64px] font-normal leading-[100%] text-gray-900 font-light mt-4 md:mt-8 text-center md:text-left"
+                  style={{ fontFamily: 'Optima, sans-serif' }}
+                >
                   MOST ADVANCED ANALYSIS
-                </h2>
+                </h3>
               </div>
 
+
               <div className="lg:col-span-7 p-6 md:p-8 rounded-xl">
-                <p className="text-black text-[20px] md:text-[25px] lg:text-[46px] font-extralight leading-[120%] md:leading-[100%] mt-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-black text-[40px] md:text-[48px] lg:text-[56px] font-manrope leading-[120%] md:leading-[100%] mt-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   Go Beyond Just A Number
                 </p>
-                <p className="text-black text-[20px] md:text-[25px] lg:text-[36px] font-extralight leading-[120%] md:leading-[100%] mt-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-black text-[20px] md:text-[24px] lg:text-[28px] font-extralight leading-[120%] md:leading-[100%] mt-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   <span className="font-bold">BioNoise Level: </span>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <p className="text-black text-[20px] md:text-[25px] lg:text-[36px] font-extralight leading-[120%] md:leading-[100%] mt-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-black text-[20px] md:text-[24px] lg:text-[28px] font-extralight leading-[120%] md:leading-[100%] mt-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   <span className="font-bold">Aging Trajectory: </span>
                   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
@@ -348,7 +338,6 @@ export default function Home() {
 
                 {/* Fifth circle */}
                 <div className="w-[160px] h-[160px] rounded-full bg-white shadow-lg relative z-30 ml-[40px]">
-                  {/* absolute 讓內容浮出圓圈外 */}
                   <div className="absolute left-full top-1/2 -translate-y-1/2 translate-x-[-30px] w-[260px] text-left scale-90">
                     <div className="inline-flex items-center px-4 py-1 gap-2 border-2 border-yellow-500 rounded-full w-[126px] h-[28px]">
                       <div className="w-[16px] h-[16px] bg-yellow-500 rounded-full"></div>
@@ -366,11 +355,12 @@ export default function Home() {
 
 
               <div className="col-span-6 flex flex-col justify-center">
-                <h2 className="text-[48px] font-semibold leading-tight mb-8 text-[#170D00]">
+                <h3 className="text-[48px] md:text-[56px] lg:text-[64px] font-normal leading-[100%] text-gray-900 font-light mt-4 md:mt-8"
+                  style={{ fontFamily: 'Optima, sans-serif' }}>
                   Identify Top Aging Factors
-                </h2>
+                </h3>
 
-                <div className="space-y-6 max-w-[700px] text-[18px] leading-relaxed text-gray-700">
+                <div className="space-y-6 max-w-[700px] text-[20px] font-manrope leading-relaxed text-gray-700">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -384,7 +374,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <button className="mt-10 bg-[#F6E7CD] text-black text-lg md:text-xl font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-2xl transition-all w-fit">
+                <button className="mt-10 bg-[#F6E7CD] text-black text-lg md:text-xl font-merriweather py-3 px-6 rounded-full shadow-lg hover:shadow-2xl transition-all w-fit">
                   View sample report
                 </button>
               </div>
@@ -416,7 +406,7 @@ export default function Home() {
           <div className="flex-1 flex flex-col" >
             {/* Top Content */}
             < div className="flex-1 flex flex-col gap-6 p-6 md:p-8 lg:p-10" >
-              <h2 className="text-[68px] sm:text-[80px] md:text-[96px] font-light mb-2"
+              <h2 className="text-[48px] md:text-[56px] lg:text-[96px] font-light mb-2"
                 style={{ fontFamily: 'Optima, sans-serif' }}>
                 Intervene with Confidence
               </h2>
@@ -430,15 +420,15 @@ export default function Home() {
 
               {/* Subsection */}
               <div className="space-y-4">
-                <h3 className="text-[28px] sm:text-[64px] font-normal"
+                <h3 className="text-[40px] md:text-[48px] lg:text-[64px] font-normal"
                   style={{ fontFamily: 'Optima, sans-serif' }}>
                   Intelligent Interventions
                 </h3>
-                <p className="text-lg leading-relaxed text-[36px]">
+                <p className="text-lg leading-relaxed text-[20px] md:text-[32px] lg:text-[36px]">
                   <strong>Intelligent Recommendations:</strong> Tailored for each test taker and for each report,
                   we generate a clinically-relevant action plan powered by our XXX algorithm.
                 </p>
-                <p className="text-lg leading-relaxed text-[36px]">
+                <p className="text-lg leading-relaxed text-[20px] md:text-[32px] lg:text-[36px]">
                   <strong>Tracking:</strong> Send the action plan to your clients and track their completion rates.
                   Make informed adjustment each cycle to dynamically achieve the health goals.
                 </p>
